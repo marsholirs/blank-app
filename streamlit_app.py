@@ -1,11 +1,23 @@
 import streamlit as st
 import pandas as pd
 import random
+import base64
 colnames=['cards','meanings','reverse_meanings']
 cards=pd.read_csv("tarot.csv",names=colnames)
 options = ["One card", "Three cards"]
 selection = st.pills("Type of reading", options, selection_mode="single")
-repeat=0
+
+file_ = open("Untitled_Artwork.gif", "rb")
+contents = file_.read()
+data_url = base64.b64encode(contents).decode("utf-8")
+file_.close()
+
+st.markdown(
+    f'<img src="data:image/gif;base64,{data_url}" alt="cat gif">',
+    unsafe_allow_html=True,
+)
+
+
 if selection=="One card":
     if st.button("Get tarot reading"):
         num=random.randint(0,21)
