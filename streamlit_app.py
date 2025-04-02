@@ -28,6 +28,7 @@ if selection=="Three cards":
             num2=random.randint(0,21)
         while num1==num3 or num2==num3:
             num3=random.randint(0,21)
+        st.write(num1,num2,num3)
         rev=random.randint(0,1)
         card=cards.at[num1,'cards']
         mean=cards.at[num1,'meanings']
@@ -37,15 +38,23 @@ if selection=="Three cards":
             st.write("This card indicates",mean,"in your past.")
         else:
             st.write("This card in reverse indictates",rev_mean,"in your past.")
-        if st.button("See next card"):
-            st.title("hello")
-            rev=rev=random.randint(0,1)
-            card2=cards.at[num2,'cards']
-            mean2=cards.at[num2,'meanings']
-            rev_mean2=cards.at[num2,'reverse_meanings']
-            st.title(card2)
-            if rev==1:
-                st.write("This card indicates",mean2,"in your present.")
-            else:
-                st.write("This card in reverse indictates",rev_mean2,"in your present.")
-            
+        
+        rev=rev=random.randint(0,1)
+        card2=cards.at[num2,'cards']
+        mean2=cards.at[num2,'meanings']
+        rev_mean2=cards.at[num2,'reverse_meanings']
+        st.title(card2)
+        if rev==1:
+            st.write("This card indicates",mean2,"in your present.")
+        else:
+            st.write("This card in reverse indictates",rev_mean2,"in your present.")
+
+        rev=random.randint(0,1)
+        card3=cards.at[num3,'cards']
+        mean3=cards.at[num3,'meanings']
+        rev_mean3=cards.at[num3,'reverse_meanings']
+        st.title(card3)
+        if rev==1:
+            st.write("This card indicates",mean3,"in your future.")
+        else:
+            st.write("This card in reverse indictates",rev_mean3,"in your future.")
