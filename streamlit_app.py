@@ -2,20 +2,23 @@ import streamlit as st
 import pandas as pd
 import random
 import base64
+with open( "font.css" ) as css:
+    st.markdown( f'<style>{css.read()}</style>' , unsafe_allow_html= True)
+
 colnames=['cards','meanings','reverse_meanings']
 cards=pd.read_csv("tarot.csv",names=colnames)
 options = ["One card", "Three cards"]
 selection = st.pills("Type of reading", options, selection_mode="single")
 
-file_ = open("Untitled_Artwork.gif", "rb")
-contents = file_.read()
-data_url = base64.b64encode(contents).decode("utf-8")
-file_.close()
+#file_ = open("Untitled_Artwork.gif", "rb")
+#contents = file_.read()
+#data_url = base64.b64encode(contents).decode("utf-8")
+#file_.close()
 
-st.markdown(
-    f'<img src="data:image/gif;base64,{data_url}" alt="cat gif">',
-    unsafe_allow_html=True,
-)
+#st.markdown(
+    #f'<img src="data:image/gif;base64,{data_url}" alt="cat gif">',
+    #unsafe_allow_html=True,
+#)
 
 
 if selection=="One card":
@@ -45,28 +48,34 @@ if selection=="Three cards":
         card=cards.at[num1,'cards']
         mean=cards.at[num1,'meanings']
         rev_mean=cards.at[num1,'reverse_meanings']
-        st.title(card)
+        st.title("Your past")
         if rev==1:
-            st.write("This card indicates",mean,"in your past.")
+            st.write(card)
+            st.write("this card indicates",mean,"in your past.")
         else:
-            st.write("This card in reverse indictates",rev_mean,"in your past.")
+            st.write(card,"reversed")
+            st.write("this card in reverse indictates",rev_mean,"in your past.")
         
         rev=rev=random.randint(0,1)
         card2=cards.at[num2,'cards']
         mean2=cards.at[num2,'meanings']
         rev_mean2=cards.at[num2,'reverse_meanings']
-        st.title(card2)
+        st.title("Your Present")
         if rev==1:
-            st.write("This card indicates",mean2,"in your present.")
+            st.write(card2)
+            st.write("this card indicates",mean2,"in your present.")
         else:
-            st.write("This card in reverse indictates",rev_mean2,"in your present.")
+            st.write(card2,"reversed")
+            st.write("this card in reverse indictates",rev_mean2,"in your present.")
 
         rev=random.randint(0,1)
         card3=cards.at[num3,'cards']
         mean3=cards.at[num3,'meanings']
         rev_mean3=cards.at[num3,'reverse_meanings']
-        st.title(card3)
+        st.title("Your future")
         if rev==1:
-            st.write("This card indicates",mean3,"in your future.")
+            st.write(card3.capitalize())
+            st.write("this card indicates",mean3,"in your future.")
         else:
-            st.write("This card in reverse indictates",rev_mean3,"in your future.")
+            st.write(card3,"reversed")
+            st.write("this card in reverse indictates",rev_mean3,"in your future.")
