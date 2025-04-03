@@ -4,7 +4,20 @@ import random
 import base64
 with open( "font.css" ) as css:
     st.markdown( f'<style>{css.read()}</style>' , unsafe_allow_html= True)
+with open( "colour.css" ) as css:
+    st.markdown( f'<style>{css.read()}</style>' , unsafe_allow_html= True)   
+    
+st.markdown("""
+<style>
+   h1 {
+      font-size: 12px;
+      text-transform: uppercase;
+   }
+</style>
+""", unsafe_allow_html=True)     
 
+
+            
 colnames=['cards','meanings','reverse_meanings']
 cards=pd.read_csv("tarot.csv",names=colnames)
 options = ["One card", "Three cards"]
