@@ -9,14 +9,14 @@ with open( "colour.css" ) as css:
 st.markdown("""
 <style>
    h1 {
-      font-size: 12px;
+      font-size: 10px;
       text-transform: uppercase;
    }
 </style>
 """, unsafe_allow_html=True)              
 
-col1, col2, col3 = st.columns(3, vertical_alignment="bottom")
-colnames=['cards','meanings','reverse_meanings']
+col1, col2, col3 = st.columns(3, vertical_alignment="bottom", gap=("large"))
+colnames=['cards','meanings','reversed_cards','reverse_meanings']
 cards=pd.read_csv("tarot.csv",names=colnames)
 
 num=random.randint(0,21)
@@ -83,7 +83,7 @@ with col2:
             card=cards.at[num,'cards']
             mean=cards.at[num,'meanings']
             rev_mean=cards.at[num,'reverse_meanings']
-            st.title(card)
+            st.subheader(card)
             if rev==1:
                 st.write("This card indicates",mean,"in your life.")
             else:
@@ -102,18 +102,18 @@ if selection=="Three cards":
     with col2:
         if st.button("Get tarot reading"):
             st.divider()
-            st.write(num,num2,num3)
         with col1:
             card=cards.at[num,'cards']
             mean=cards.at[num,'meanings']
+            rev_card=cards.at[num,'reversed_cards']
             rev_mean=cards.at[num,'reverse_meanings']
             st.title("Your past")
             rev=random.randint(0,1)
             if rev==1:
-                st.write(card)
+                st.subheader(card)
                 st.write("this card indicates",mean,"in your past.")
             else:
-                st.write(card,"reversed")
+                st.subheader(rev_card)
                 st.write("this card in reverse indictates",rev_mean,"in your past.")
         
             contents = file_.read()
@@ -128,13 +128,14 @@ if selection=="Three cards":
             rev=random.randint(0,1)
             card2=cards.at[num2,'cards']
             mean2=cards.at[num2,'meanings']
+            rev_card2=cards.at[num2,'reversed_cards']
             rev_mean2=cards.at[num2,'reverse_meanings']
-            st.title("Your Present")
+            st.title("Your present")
             if rev==1:
-                st.write(card2)
+                st.subheader(card2)
                 st.write("this card indicates",mean2,"in your present.")
             else:
-                st.write(card2,"reversed")
+                st.subheader(rev_card2)
                 st.write("this card in reverse indictates",rev_mean2,"in your present.")
             
             if num2==0:
@@ -194,13 +195,14 @@ if selection=="Three cards":
             rev=random.randint(0,1)
             card3=cards.at[num3,'cards']
             mean3=cards.at[num3,'meanings']
+            rev_card3=cards.at[num3,'reversed_cards']
             rev_mean3=cards.at[num3,'reverse_meanings']
             st.title("Your future")
             if rev==1:
-                st.write(card3.capitalize())
+                st.subheader(card3)
                 st.write("this card indicates",mean3,"in your future.")
             else:
-                st.write(card3,"reversed")
+                st.subheader(rev_card3)
                 st.write("this card in reverse indictates",rev_mean3,"in your future.")
 
             if num3==0:
