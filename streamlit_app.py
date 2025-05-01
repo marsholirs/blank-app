@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import random
 import base64
+st.set_page_config(layout="wide")
 with open( "font.css" ) as css:
     st.markdown( f'<style>{css.read()}</style>' , unsafe_allow_html= True)
 with open( "colour.css" ) as css:
@@ -99,9 +100,9 @@ with col2:
             )
         
 if selection=="Three cards":
-    with col2:
-        if st.button("Get tarot reading"):
-            st.divider()
+    with col2: 
+        if st.button('REDRAW CARDS'):
+            st.rerun()  
         with col1:
             card=cards.at[num,'cards']
             mean=cards.at[num,'meanings']
