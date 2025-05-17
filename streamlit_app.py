@@ -37,7 +37,7 @@ if num==0:
 elif num==1:
     file_ = open("the magician .gif", "rb")
 elif num==2:
-    file_ = open("the high priestess .gif", "rb")
+    file_ = open("the high priestess.gif", "rb")
 elif num==3:
     file_ = open("the empress.gif", "rb")
 elif num==4:
@@ -51,11 +51,11 @@ elif num==7:
 elif num==8:
     file_ = open("strength.gif", "rb")
 elif num==9:
-    file_ = open("the hermit.gif", "rb")
+    file_ = open("the hermit .gif", "rb")
 elif num==10:
-    file_ = open("the wheel of fate.gif", "rb")
+    file_ = open("wheel of fate.gif", "rb")
 elif num==11:
-    file_ = open("justice.gif", "rb")       
+    file_ = open("justice .gif", "rb")       
 elif num==12:
     file_ = open("the hanged man.gif", "rb")
 elif num==13:
@@ -73,9 +73,9 @@ elif num==18:
 elif num==19:
     file_ = open("the sun.gif", "rb")
 elif num==20:
-    file_ = open("judgment .gif", "rb")
+    file_ = open("judgement.gif", "rb")
 elif num==21:
-    file_ = open("the world.gif", "rb")
+    file_ = open("the world .gif", "rb")
 with col2:
     if selection=="One card":
         if st.button("Get tarot reading"):
@@ -144,7 +144,7 @@ if selection=="Three cards":
             elif num2==1:
                 file_ = open("the magician .gif", "rb")
             elif num2==2:
-                file_ = open("the high priestess .gif", "rb")
+                file_ = open("the high priestess.gif", "rb")
             elif num2==3:
                 file_ = open("the empress.gif", "rb")
             elif num2==4:
@@ -158,11 +158,11 @@ if selection=="Three cards":
             elif num2==8:
                 file_ = open("strength.gif", "rb")
             elif num2==9:
-                file_ = open("the hermit.gif", "rb")
+                file_ = open("the hermit .gif", "rb")
             elif num2==10:
-                file_ = open("the wheel of fate.gif", "rb")
+                file_ = open("wheel of fate.gif", "rb")
             elif num2==11:
-                file_ = open("justice.gif", "rb")       
+                file_ = open("justice .gif", "rb")       
             elif num2==12:
                 file_ = open("the hanged man.gif", "rb")
             elif num2==13:
@@ -180,9 +180,9 @@ if selection=="Three cards":
             elif num2==19:
                 file_ = open("the sun.gif", "rb")
             elif num2==20:
-                file_ = open("judgment .gif", "rb")
+                file_ = open("judgement.gif", "rb")
             elif num2==21:
-                file_ = open("the world.gif", "rb")
+                file_ = open("the world .gif", "rb")
 
             contents = file_.read()
             data_url = base64.b64encode(contents).decode("utf-8")
@@ -211,7 +211,7 @@ if selection=="Three cards":
             elif num3==1:
                 file_ = open("the magician .gif", "rb")
             elif num3==2:
-                file_ = open("the high priestess .gif", "rb")
+                file_ = open("the high priestess.gif", "rb")
             elif num3==3:
                 file_ = open("the empress.gif", "rb")
             elif num3==4:
@@ -225,11 +225,11 @@ if selection=="Three cards":
             elif num3==8:
                 file_ = open("strength.gif", "rb")
             elif num3==9:
-                file_ = open("the hermit.gif", "rb")
+                file_ = open("the hermit .gif", "rb")
             elif num3==10:
-                file_ = open("the wheel of fate.gif", "rb")
+                file_ = open("wheel of fate.gif", "rb")
             elif num3==11:
-                file_ = open("justice.gif", "rb")       
+                file_ = open("justice .gif", "rb")       
             elif num3==12:
                 file_ = open("the hanged man.gif", "rb")
             elif num3==13:
@@ -247,9 +247,9 @@ if selection=="Three cards":
             elif num3==19:
                 file_ = open("the sun.gif", "rb")
             elif num3==20:
-                file_ = open("judgment .gif", "rb")
+                file_ = open("judgement.gif", "rb")
             elif num3==21:
-                file_ = open("the world.gif", "rb")
+                file_ = open("the world .gif", "rb")
 
             contents = file_.read()
             data_url = base64.b64encode(contents).decode("utf-8")
